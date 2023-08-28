@@ -12,11 +12,8 @@ st.title('Layout: Sidebar, Column, Tab, and Expander')
 
 # side bar
 
-add_selectbox = st.sidebar.selectbox('How would you like to be contacted?',
-                                     ('Email', 'Home phone', 'Mobile Phone'))
-
-add_slider = st.sidebar.slider(
-    'Select a range of values', 0.0, 100.0, (25.0, 75.0))
+space_slider = st.sidebar.slider(
+    'Select Space Between the Two Charts', 0.0, 1.0, (0.5))
 
 
 def plot_altair():
@@ -35,6 +32,7 @@ def plot_altair():
 def plot_vega():
     vega_chart = {
         "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "height": 300,
         "data": {
             "values": [
                 {"category": "A", "group": "x", "value": 0.1},
@@ -79,7 +77,7 @@ def plot_plotly():
 
 
 # column with buffer
-col_left, _, col_right = st.columns([2, 0.5, 2])
+col_left, _, col_right = st.columns([2, space_slider, 2])
 
 with col_left:
 
