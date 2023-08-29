@@ -5,4 +5,4 @@ page_config(page_title='Home Page')
 st.title('Knowledge Sharing - Streamlit')
 
 
-st.markdown("###  Useful Streamlit Component")
+st.markdown("###  Useful Streamlit Components")
