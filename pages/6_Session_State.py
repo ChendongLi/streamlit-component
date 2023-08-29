@@ -5,7 +5,7 @@ import pandas as pd
 page_config(page_title='Session State')
 st.title('Add Statefulness: Session State & Callback')
 
-
+# *************** stateless ****************************
 st.markdown('### Stateless Example: Counter')
 count = 0
 
@@ -16,6 +16,9 @@ if increment:
 st.write('Count = ', count)
 
 st.markdown('')
+
+
+# *************** stateful ****************************
 
 st.markdown('### *Stateful* Example: Counter')
 
@@ -28,8 +31,11 @@ if increment:
 
 st.write('Count = ', st.session_state['count'])
 
-
 st.markdown('')
+
+
+# *************** call back ****************************
+
 st.markdown('### CallBack Function')
 st.write("st.session_state object:", st.session_state)
 
@@ -47,4 +53,4 @@ with col1:
     pounds = st.number_input('Pounds:', key='lbs', on_change=lbs_to_kg)
 
 with col2:
-    pounds = st.number_input('Kilograms:', key='kg', on_change=kg_to_lbs)
+    kgs = st.number_input('Kilograms:', key='kg', on_change=kg_to_lbs)
